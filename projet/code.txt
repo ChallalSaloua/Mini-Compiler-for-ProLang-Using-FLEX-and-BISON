@@ -1,0 +1,270 @@
+BeginProject M1_iv_2526;
+
+Setup:
+%% =====================================================
+%% TEST AVANCE OPTIMISATION DES QUADRUPLETS
+%% =====================================================
+
+define x | y | z | a | b | c | d | e | f | g : integer;
+define i | j | k | n | m : integer;
+define p | q | r | s : float;
+
+define tmp1 | tmp2 | tmp3 | tmp4 | tmp5 : integer = 0;
+define resultat | total | score : integer = 0;
+define moyenne : float = 0.0;
+
+define Tab : [integer; 30];
+define Mat : [integer; 20];
+define Vec : [float; 20];
+
+const ZERO : integer = 0;
+const ONE : integer = 1;
+const N : integer = 10;
+const LIM : integer = 5;
+const PI : float = 3.14159;
+
+Run:
+{
+    %% =====================================================
+    %% INITIALISATION
+    %% =====================================================
+
+    x <-- 10;
+    y <-- 5;
+    z <-- 0;
+    a <-- 3;
+    b <-- 4;
+    c <-- 0;
+    d <-- 1;
+    e <-- 8;
+    f <-- 2;
+    g <-- 6;
+
+    p <-- 2.5;
+    q <-- 4.0;
+    r <-- 0.0;
+    s <-- 1.0;
+
+    %% =====================================================
+    %% 1) OPTIMISATIONS ALGEBRIQUES DIRECTES
+    %% =====================================================
+
+    tmp1 <-- x + 0;
+    tmp2 <-- y - 0;
+    tmp3 <-- a * 1;
+    tmp4 <-- b / 1;
+    tmp5 <-- c * 0;
+
+    resultat <-- x * 0;
+    total <-- y + 0;
+    score <-- e - 0;
+
+    p <-- q * 1.0;
+    r <-- p + 0.0;
+    s <-- q / 1.0;
+
+    %% =====================================================
+    %% 2) PROPAGATION SIMPLE DIRECTE
+    %% =====================================================
+
+    %% Cas : x = y puis z = x
+    x <-- y;
+    z <-- x;
+
+    %% Cas : a = b puis c = a
+    a <-- b;
+    c <-- a;
+
+    %% Cas : tmp1 = e puis tmp2 = tmp1
+    tmp1 <-- e;
+    tmp2 <-- tmp1;
+
+    %% Cas : tmp3 = tmp2 puis tmp4 = tmp3
+    tmp3 <-- tmp2;
+    tmp4 <-- tmp3;
+
+    %% =====================================================
+    %% 3) EXPRESSIONS COMPOSEES OPTIMISABLES
+    %% =====================================================
+
+    resultat <-- (x + 0) + (y * 1);
+    total <-- (a - 0) * (b / 1);
+    score <-- ((e + 0) - 0) + ((f * 1) / 1);
+
+    tmp1 <-- ((x * 1) + (y - 0)) * 1;
+    tmp2 <-- ((a + 0) * (b + 0)) + (c * 0);
+    tmp3 <-- ((e / 1) - (f * 0)) + (g + 0);
+
+    %% =====================================================
+    %% 4) TABLEAUX AVEC EXPRESSIONS OPTIMISABLES
+    %% =====================================================
+
+    Tab[0] <-- x + 0;
+    Tab[1] <-- y * 1;
+    Tab[2] <-- a - 0;
+    Tab[3] <-- b / 1;
+    Tab[4] <-- c * 0;
+
+    Mat[0] <-- Tab[0] + 0;
+    Mat[1] <-- Tab[1] * 1;
+    Mat[2] <-- Tab[2] - 0;
+    Mat[3] <-- Tab[3] / 1;
+    Mat[4] <-- Tab[4] * 0;
+
+    Vec[0] <-- p + 0.0;
+    Vec[1] <-- q * 1.0;
+    Vec[2] <-- r / 1.0;
+
+    %% =====================================================
+    %% 5) CONDITIONS COMPLEXES + BLOCS OPTIMISABLES
+    %% =====================================================
+
+    if (((x > y) AND (a < b + 0)) OR NON(z == 0)) then:
+    {
+        resultat <-- resultat + 0;
+        total <-- total * 1;
+        score <-- score - 0;
+
+        tmp1 <-- resultat;
+        tmp2 <-- tmp1;
+
+        Tab[5] <-- tmp2 + 0;
+    }
+    else
+    {
+        resultat <-- resultat * 0;
+        total <-- total + 0;
+        score <-- score / 1;
+
+        tmp3 <-- total;
+        tmp4 <-- tmp3;
+
+        Tab[6] <-- tmp4 * 1;
+    }
+    endIf;
+
+    %% =====================================================
+    %% 6) FOR SIMPLE AVEC BEAUCOUP D'OPTIMISATIONS
+    %% =====================================================
+
+    for i in 0 to 5
+    {
+        tmp1 <-- i + 0;
+        tmp2 <-- tmp1 * 1;
+        tmp3 <-- tmp2 - 0;
+        tmp4 <-- tmp3 / 1;
+        tmp5 <-- tmp4 * 0;
+
+        Tab[i] <-- tmp4 + 0;
+        Mat[i] <-- Tab[i] * 1;
+
+        resultat <-- resultat + tmp5;
+        total <-- total + Tab[i];
+
+        a <-- tmp4;
+        b <-- a;
+    }
+    endfor;
+
+    %% =====================================================
+    %% 7) FOR IMBRIQUE AVEC TABLEAUX ET PROPAGATION
+    %% =====================================================
+
+    for i in 0 to 3
+    {
+        for j in 0 to 2
+        {
+            k <-- i + j;
+
+            tmp1 <-- k + 0;
+            tmp2 <-- tmp1 * 1;
+            tmp3 <-- tmp2 - 0;
+            tmp4 <-- tmp3 / 1;
+
+            Mat[k] <-- tmp4 + 0;
+            Tab[k] <-- Mat[k] * 1;
+
+            c <-- Tab[k];
+            d <-- c;
+
+            score <-- score + d;
+        }
+        endfor;
+    }
+    endfor;
+
+    %% =====================================================
+    %% 8) WHILE SIMPLE AVEC OPTIMISATIONS
+    %% =====================================================
+
+    i <-- 0;
+
+    loop while ((i < LIM) AND NON(i == N))
+    {
+        tmp1 <-- i + 0;
+        tmp2 <-- tmp1 * 1;
+        tmp3 <-- tmp2 - 0;
+
+        Tab[i] <-- tmp3;
+
+        resultat <-- resultat + Tab[i] * 1;
+
+        i <-- i + 1;
+    }
+    endloop;
+
+    %% =====================================================
+    %% 9) WHILE IMBRIQUE COMPLEXE
+    %% =====================================================
+
+    i <-- 0;
+
+    loop while (i < 3)
+    {
+        j <-- 0;
+
+        loop while ((j < 4) AND NON(i == j))
+        {
+            k <-- i + j;
+
+            tmp1 <-- k + 0;
+            tmp2 <-- tmp1 * 1;
+            tmp3 <-- tmp2 - 0;
+            tmp4 <-- tmp3 / 1;
+            tmp5 <-- tmp4 * 0;
+
+            Tab[k] <-- tmp4 + 0;
+            Mat[k] <-- Tab[k] * 1;
+
+            total <-- total + tmp5;
+            score <-- score + Mat[k];
+
+            a <-- score;
+            b <-- a;
+
+            j <-- j + 1;
+        }
+        endloop;
+
+        i <-- i + 1;
+    }
+    endloop;
+
+    %% =====================================================
+    %% 10) EXPRESSIONS FINALES POUR VERIFIER L'OPTIMISATION
+    %% =====================================================
+
+    resultat <-- ((resultat + 0) * 1) / 1;
+    total <-- ((total - 0) + (score * 0)) + 0;
+    score <-- ((score + resultat) - 0) * 1;
+
+    moyenne <-- ((p + q) + 0.0) / 1.0;
+    moyenne <-- moyenne / 2.0;
+
+    OUTPUT("Resultat = ", resultat);
+    OUTPUT("Total = ", total);
+    OUTPUT("Score = ", score);
+    OUTPUT("Moyenne = ", moyenne);
+}
+
+EndProject;

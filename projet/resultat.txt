@@ -1,0 +1,581 @@
+[ERREUR SEMANTIQUE] ligne 20 : double declaration de 'a'.
+[ERREUR SEMANTIQUE] ligne 23 : double declaration de 'tab'.
+[ERREUR SEMANTIQUE] ligne 26 : double declaration de 'lim'.
+[ERREUR SEMANTIQUE] ligne 29 : constante 'errIntFlt' de type INTEGER initialisee avec une valeur FLOAT.
+[ERREUR SEMANTIQUE] ligne 113 : 'pi' est une constante, reaffectation interdite.
+[ERREUR SEMANTIQUE] ligne 116 : 'lim' est une constante, reaffectation interdite.
+[ERREUR SEMANTIQUE] ligne 119 : 'zero' est une constante, reaffectation interdite.
+[ERREUR SEMANTIQUE] ligne 122 : identificateur 'kk' non declare.
+[ERREUR SEMANTIQUE] ligne 125 : identificateur 'zzz' non declare.
+[ERREUR SEMANTIQUE] ligne 128 : tableau 'ghostTab' non declare.
+[ERREUR SEMANTIQUE] ligne 138 : depassement de taille : indice 10 hors limites pour le tableau 'tab' de taille 5. Indices valides : [0..4].
+[ERREUR SEMANTIQUE] ligne 141 : depassement de taille : indice 8 hors limites pour le tableau 'tab' de taille 5. Indices valides : [0..4].
+[ERREUR SEMANTIQUE] ligne 144 : 'tab' est un tableau, utilisation sans indice interdite.
+[ERREUR SEMANTIQUE] ligne 147 : 'a' n'est pas un tableau.
+[ERREUR SEMANTIQUE] ligne 150 : indice du tableau 'tab' doit etre INTEGER.
+[ERREUR SEMANTIQUE] ligne 153 : indice du tableau 'tab' doit etre INTEGER, pas STRING.
+[ERREUR SEMANTIQUE] ligne 156 : affectation incompatible : 'a' est INTEGER mais l'expression est FLOAT.
+[ERREUR SEMANTIQUE] ligne 159 : affectation incompatible : 'c' est INTEGER mais l'expression est FLOAT.
+[ERREUR SEMANTIQUE] ligne 162 : affectation incompatible : 'a' est INTEGER mais l'expression est STRING.
+[ERREUR SEMANTIQUE] ligne 165 : affectation incompatible : 'x' est FLOAT mais l'expression est STRING.
+[ERREUR SEMANTIQUE] ligne 168 : affectation incompatible : tableau 'tab' est INTEGER mais la valeur est FLOAT.
+[ERREUR SEMANTIQUE] ligne 171 : affectation incompatible : tableau 'tab' est INTEGER mais la valeur est STRING.
+[ERREUR SEMANTIQUE] ligne 178 : division par zero interdite.
+[ERREUR SEMANTIQUE] ligne 178 : affectation incompatible : 'c' est INTEGER mais l'expression est FLOAT.
+[ERREUR SEMANTIQUE] ligne 181 : division par zero (0.0) interdite.
+[ERREUR SEMANTIQUE] ligne 184 : operation '+' interdite sur une expression STRING.
+[ERREUR SEMANTIQUE] ligne 187 : operation '-' interdite sur une expression STRING.
+[AVERTISSEMENT SEMANTIQUE] ligne 190 : comparaison '>' entre INTEGER et FLOAT.
+[ERREUR SEMANTIQUE] ligne 197 : comparaison '>' avec une expression STRING interdite.
+[ERREUR SEMANTIQUE] ligne 204 : comparaison '==' entre STRING et non-STRING interdite.
+[ERREUR SEMANTIQUE] ligne 211 : condition non booleenne dans if/while/for.
+[ERREUR SEMANTIQUE] ligne 218 : variable de boucle 'for' 'ghost' non declaree.
+[ERREUR SEMANTIQUE] ligne 225 : variable de boucle 'for' 'x' doit etre de type INTEGER.
+[ERREUR SEMANTIQUE] ligne 232 : variable de boucle 'for' 'lim' est une constante, modification interdite.
+[ERREUR SEMANTIQUE] ligne 239 : borne initiale (10) > borne finale (2) dans le 'for'.
+[AVERTISSEMENT SEMANTIQUE] ligne 246 : borne initiale == borne finale (3) dans le 'for', la boucle s'execute une seule fois.
+[ERREUR SEMANTIQUE] ligne 253 : la valeur initiale du 'for' doit etre un entier.
+[ERREUR SEMANTIQUE] ligne 260 : la valeur limite du 'for' doit etre un entier.
+[ERREUR SEMANTIQUE] ligne 267 : identificateur 'fantome' non declare dans INPUT.
+[ERREUR SEMANTIQUE] ligne 270 : 'pi' est une constante, INPUT interdit.
+[ERREUR SEMANTIQUE] ligne 273 : 'tab' est un tableau, INPUT sans indice interdit.
+[ERREUR SEMANTIQUE] ligne 276 : identificateur 'inconnu' non declare dans OUTPUT.
+[ERREUR SEMANTIQUE] ligne 279 : 'tab' est un tableau, OUTPUT sans indice interdit.
+Programme 'M1_iv_2526' ligne 1
+
+============================================================================================================
+                               TABLE DES SYMBOLES                                  
+============================================================================================================
+
+	| Nom_Entite      | Code_Entite  | Type_Entite  | Val_Entite | TailleMIN | TailleMAX | Ligne |
+	------------------------------------------------------------------------------------------------------------
+	| zero            | CONST        | INT          | 0.00       | 0         | 0         | 14    |
+	| tab             | TAB          | INT          | 0.00       | 0         | 4         | 10    |
+	| pi              | CONST        | FLOAT        | 3.14       | 0         | 0         | 12    |
+	| mat             | TAB          | INT          | 0.00       | 0         | 2         | 11    |
+	| moyenne         | VAR          | FLOAT        | 0.00       | 0         | 0         | 8     |
+	| errIntFlt       | CONST        | INT          | 2.00       | 0         | 0         | 29    |
+	| idx             | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| lim             | CONST        | INT          | 4.00       | 0         | 0         | 13    |
+	| e               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| d               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| a               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| t1              | VAR          | INT          | 0.00       | 0         | 0         | 9     |
+	| c               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| b               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| t2              | VAR          | INT          | 0.00       | 0         | 0         | 9     |
+	| m               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| n               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| i               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| j               | VAR          | INT          | 0.00       | 0         | 0         | 6     |
+	| y               | VAR          | FLOAT        | 0.00       | 0         | 0         | 7     |
+	| x               | VAR          | FLOAT        | 0.00       | 0         | 0         | 7     |
+	| z               | VAR          | FLOAT        | 0.00       | 0         | 0         | 7     |
+==============================================================================================================
+  Total : 22 symbole(s)
+==============================================================================================================
+
+============================================================================================================
+                               TABLE DES QUADRUPLETS (avant optimisation)
+============================================================================================================
+| ID    | OPERATION      | ARG1             | ARG2             | RESULTAT         |
+------------------------------------------------------------------------------------------------------------
+| 0     | =              | 0                | -                | t1               |
+| 1     | =              | 0                | -                | t2               |
+| 2     | =              | 3.141590         | -                | pi               |
+| 3     | =              | 4                | -                | lim              |
+| 4     | =              | 0                | -                | zero             |
+| 5     | =              | 9                | -                | lim              |
+| 6     | =              | 5                | -                | a                |
+| 7     | =              | 2                | -                | b                |
+| 8     | +              | a                | b                | t8               |
+| 9     | =              | t8               | -                | c                |
+| 10    | -              | c                | 1                | t10              |
+| 11    | =              | t10              | -                | d                |
+| 12    | *              | d                | 2                | t12              |
+| 13    | =              | t12              | -                | e                |
+| 14    | =              | 5.500000         | -                | x                |
+| 15    | =              | 2.500000         | -                | y                |
+| 16    | +              | x                | y                | t16              |
+| 17    | =              | t16              | -                | z                |
+| 18    | +              | x                | y                | t18              |
+| 19    | /              | t18              | 2.000000         | t19              |
+| 20    | DIVCHECK       | -                | -                | 2.000000         |
+| 21    | =              | t19              | -                | moyenne          |
+| 22    | BOUNDS         | 0                | 5                | 0                |
+| 23    | []=            | a                | 0                | tab              |
+| 24    | BOUNDS         | 0                | 5                | 1                |
+| 25    | []=            | b                | 1                | tab              |
+| 26    | BOUNDS         | 0                | 5                | 2                |
+| 27    | []=            | c                | 2                | tab              |
+| 28    | BOUNDS         | 0                | 5                | 3                |
+| 29    | []=            | d                | 3                | tab              |
+| 30    | BOUNDS         | 0                | 5                | 4                |
+| 31    | []=            | e                | 4                | tab              |
+| 32    | BOUNDS         | 0                | 5                | 1                |
+| 33    | =              | tab[1]           | -                | a                |
+| 34    | BOUNDS         | 0                | 5                | 2                |
+| 35    | =              | tab[2]           | -                | b                |
+| 36    | =              | 3                | -                | idx              |
+| 37    | BOUNDS         | 0                | 5                | idx              |
+| 38    | =              | tab[idx]         | -                | c                |
+| 39    | >              | a                | b                | cond             |
+| 40    | BG             | cond             | -                | 43               |
+| 41    | -              | a                | b                | t41              |
+| 42    | =              | t41              | -                | c                |
+| 43    | <              | a                | b                | cond             |
+| 44    | BL             | cond             | -                | 48               |
+| 45    | -              | b                | a                | t45              |
+| 46    | =              | t45              | -                | c                |
+| 47    | BR             | -                | -                | 50               |
+| 48    | +              | a                | b                | t48              |
+| 49    | =              | t48              | -                | c                |
+| 50    | =              | 0                | -                | i                |
+| 51    | <              | i                | 5                | cond             |
+| 52    | BL             | cond             | -                | 58               |
+| 53    | BOUNDS         | 0                | 5                | i                |
+| 54    | []=            | i                | i                | tab              |
+| 55    | +              | i                | 1                | t55              |
+| 56    | =              | t55              | -                | i                |
+| 57    | BR             | -                | -                | 51               |
+| 58    | =              | 0                | -                | i                |
+| 59    | <=             | i                | 4                | cond             |
+| 60    | BLE            | cond             | -                | 66               |
+| 61    | BOUNDS         | 0                | 5                | i                |
+| 62    | +              | b                | tab[i]           | t62              |
+| 63    | =              | t62              | -                | b                |
+| 64    | AINC           | i                | -                | -                |
+| 65    | BR             | -                | -                | 59               |
+| 66    | INPUT          | -                | -                | a                |
+| 67    | INPUT          | -                | -                | b                |
+| 68    | OUTPUT         | "Valeur de a = ",a | -                | -                |
+| 69    | OUTPUT         | "Valeur de b = ",b | -                | -                |
+| 70    | OUTPUT         | "Valeur de c = ",c | -                | -                |
+| 71    | OUTPUT         | "Valeur de moyenne = ",moyenne | -                | -                |
+| 72    | +              | zzz              | 1                | t72              |
+| 73    | =              | t72              | -                | c                |
+| 74    | -              | 0                | 1                | t74              |
+| 75    | BOUNDS         | 0                | 5                | t74              |
+| 76    | []=            | 5                | t74              | tab              |
+| 77    | -              | 0                | 2                | t77              |
+| 78    | BOUNDS         | 0                | 5                | t77              |
+| 79    | =              | tab[t77]         | -                | a                |
+| 80    | BOUNDS         | 0                | 5                | 8                |
+| 81    | =              | tab[8]           | -                | a                |
+| 82    | BOUNDS         | 0                | 5                | 0                |
+| 83    | BOUNDS         | 0                | 5                | 1                |
+| 84    | =              | 10               | -                | idx              |
+| 85    | BOUNDS         | 0                | 5                | idx              |
+| 86    | =              | tab[idx]         | -                | b                |
+| 87    | /              | a                | 0                | t87              |
+| 88    | DIVCHECK       | -                | -                | 0                |
+| 89    | /              | x                | 0.000000         | t89              |
+| 90    | DIVCHECK       | -                | -                | 0.000000         |
+| 91    | =              | t89              | -                | z                |
+| 92    | +              | "abc"            | 1                | t92              |
+| 93    | =              | t92              | -                | a                |
+| 94    | -              | 5                | "xyz"            | t94              |
+| 95    | =              | t94              | -                | a                |
+| 96    | >              | a                | x                | cond             |
+| 97    | BG             | cond             | -                | 99               |
+| 98    | =              | 1                | -                | b                |
+| 99    | >              | "abc"            | b                | cond             |
+| 100   | BG             | cond             | -                | 102              |
+| 101   | =              | 1                | -                | c                |
+| 102   | ==             | "bonjour"        | a                | cond             |
+| 103   | BE             | cond             | -                | 105              |
+| 104   | =              | 5                | -                | c                |
+| 105   | BNZ            | cond             | -                | 107              |
+| 106   | =              | 7                | -                | c                |
+| 107   | =              | 0                | -                | ghost            |
+| 108   | <=             | ghost            | 5                | cond             |
+| 109   | BLE            | cond             | -                | 114              |
+| 110   | +              | c                | 1                | t110             |
+| 111   | =              | t110             | -                | c                |
+| 112   | AINC           | ghost            | -                | -                |
+| 113   | BR             | -                | -                | 108              |
+| 114   | =              | 0                | -                | x                |
+| 115   | <=             | x                | 4                | cond             |
+| 116   | BLE            | cond             | -                | 121              |
+| 117   | +              | c                | 1                | t117             |
+| 118   | =              | t117             | -                | c                |
+| 119   | AINC           | x                | -                | -                |
+| 120   | BR             | -                | -                | 115              |
+| 121   | =              | 0                | -                | lim              |
+| 122   | <=             | lim              | 3                | cond             |
+| 123   | BLE            | cond             | -                | 128              |
+| 124   | +              | c                | 1                | t124             |
+| 125   | =              | t124             | -                | c                |
+| 126   | AINC           | lim              | -                | -                |
+| 127   | BR             | -                | -                | 122              |
+| 128   | =              | 10               | -                | i                |
+| 129   | <=             | i                | 2                | cond             |
+| 130   | BLE            | cond             | -                | 135              |
+| 131   | +              | c                | 1                | t131             |
+| 132   | =              | t131             | -                | c                |
+| 133   | AINC           | i                | -                | -                |
+| 134   | BR             | -                | -                | 129              |
+| 135   | =              | 3                | -                | i                |
+| 136   | <=             | i                | 3                | cond             |
+| 137   | BLE            | cond             | -                | 142              |
+| 138   | +              | c                | 1                | t138             |
+| 139   | =              | t138             | -                | c                |
+| 140   | AINC           | i                | -                | -                |
+| 141   | BR             | -                | -                | 136              |
+| 142   | =              | 1.500000         | -                | i                |
+| 143   | <=             | i                | 4                | cond             |
+| 144   | BLE            | cond             | -                | 149              |
+| 145   | +              | c                | 1                | t145             |
+| 146   | =              | t145             | -                | c                |
+| 147   | AINC           | i                | -                | -                |
+| 148   | BR             | -                | -                | 143              |
+| 149   | =              | 0                | -                | i                |
+| 150   | <=             | i                | 3.900000         | cond             |
+| 151   | BLE            | cond             | -                | 156              |
+| 152   | +              | c                | 1                | t152             |
+| 153   | =              | t152             | -                | c                |
+| 154   | AINC           | i                | -                | -                |
+| 155   | BR             | -                | -                | 150              |
+| 156   | OUTPUT         | "val = ",inconnu | -                | -                |
+| 157   | OUTPUT         | "tab = ",tab     | -                | -                |
+============================================================================================================
+
+============================================================================================================
+                         QUADRUPLETS SUPPRIMES / MODIFIES PAR L'OPTIMISATION
+============================================================================================================
+| ID    | TYPE         | OP               | ARG1             | ARG2             | RESULTAT             |
+------------------------------------------------------------------------------------------------------------
+| -     | AUCUN        | -                | -                | -                | -                    |
+============================================================================================================
+
+============================================================================================================
+                               TABLE DES QUADRUPLETS (apres optimisation)
+============================================================================================================
+| ID    | OPERATION      | ARG1             | ARG2             | RESULTAT         |
+------------------------------------------------------------------------------------------------------------
+| 0     | =              | 0                | -                | t1               |
+| 1     | =              | 0                | -                | t2               |
+| 2     | =              | 3.141590         | -                | pi               |
+| 3     | =              | 4                | -                | lim              |
+| 4     | =              | 0                | -                | zero             |
+| 5     | =              | 9                | -                | lim              |
+| 6     | =              | 5                | -                | a                |
+| 7     | =              | 2                | -                | b                |
+| 8     | +              | a                | b                | t8               |
+| 9     | =              | t8               | -                | c                |
+| 10    | -              | c                | 1                | t10              |
+| 11    | =              | t10              | -                | d                |
+| 12    | *              | d                | 2                | t12              |
+| 13    | =              | t12              | -                | e                |
+| 14    | =              | 5.500000         | -                | x                |
+| 15    | =              | 2.500000         | -                | y                |
+| 16    | +              | x                | y                | t16              |
+| 17    | =              | t16              | -                | z                |
+| 18    | +              | x                | y                | t18              |
+| 19    | /              | t18              | 2.000000         | t19              |
+| 20    | DIVCHECK       | -                | -                | 2.000000         |
+| 21    | =              | t19              | -                | moyenne          |
+| 22    | BOUNDS         | 0                | 5                | 0                |
+| 23    | []=            | a                | 0                | tab              |
+| 24    | BOUNDS         | 0                | 5                | 1                |
+| 25    | []=            | b                | 1                | tab              |
+| 26    | BOUNDS         | 0                | 5                | 2                |
+| 27    | []=            | c                | 2                | tab              |
+| 28    | BOUNDS         | 0                | 5                | 3                |
+| 29    | []=            | d                | 3                | tab              |
+| 30    | BOUNDS         | 0                | 5                | 4                |
+| 31    | []=            | e                | 4                | tab              |
+| 32    | BOUNDS         | 0                | 5                | 1                |
+| 33    | =              | tab[1]           | -                | a                |
+| 34    | BOUNDS         | 0                | 5                | 2                |
+| 35    | =              | tab[2]           | -                | b                |
+| 36    | =              | 3                | -                | idx              |
+| 37    | BOUNDS         | 0                | 5                | idx              |
+| 38    | =              | tab[idx]         | -                | c                |
+| 39    | >              | a                | b                | cond             |
+| 40    | BG             | cond             | -                | 43               |
+| 41    | -              | a                | b                | t41              |
+| 42    | =              | t41              | -                | c                |
+| 43    | <              | a                | b                | cond             |
+| 44    | BL             | cond             | -                | 48               |
+| 45    | -              | b                | a                | t45              |
+| 46    | =              | t45              | -                | c                |
+| 47    | BR             | -                | -                | 50               |
+| 48    | +              | a                | b                | t48              |
+| 49    | =              | t48              | -                | c                |
+| 50    | =              | 0                | -                | i                |
+| 51    | <              | i                | 5                | cond             |
+| 52    | BL             | cond             | -                | 58               |
+| 53    | BOUNDS         | 0                | 5                | i                |
+| 54    | []=            | i                | i                | tab              |
+| 55    | +              | i                | 1                | t55              |
+| 56    | =              | t55              | -                | i                |
+| 57    | BR             | -                | -                | 51               |
+| 58    | =              | 0                | -                | i                |
+| 59    | <=             | i                | 4                | cond             |
+| 60    | BLE            | cond             | -                | 66               |
+| 61    | BOUNDS         | 0                | 5                | i                |
+| 62    | +              | b                | tab[i]           | t62              |
+| 63    | =              | t62              | -                | b                |
+| 64    | AINC           | i                | -                | -                |
+| 65    | BR             | -                | -                | 59               |
+| 66    | INPUT          | -                | -                | a                |
+| 67    | INPUT          | -                | -                | b                |
+| 68    | OUTPUT         | "Valeur de a = ",a | -                | -                |
+| 69    | OUTPUT         | "Valeur de b = ",b | -                | -                |
+| 70    | OUTPUT         | "Valeur de c = ",c | -                | -                |
+| 71    | OUTPUT         | "Valeur de moyenne = ",moyenne | -                | -                |
+| 72    | +              | zzz              | 1                | t72              |
+| 73    | =              | t72              | -                | c                |
+| 74    | -              | 0                | 1                | t74              |
+| 75    | BOUNDS         | 0                | 5                | t74              |
+| 76    | []=            | 5                | t74              | tab              |
+| 77    | -              | 0                | 2                | t77              |
+| 78    | BOUNDS         | 0                | 5                | t77              |
+| 79    | =              | tab[t77]         | -                | a                |
+| 80    | BOUNDS         | 0                | 5                | 8                |
+| 81    | =              | tab[8]           | -                | a                |
+| 82    | BOUNDS         | 0                | 5                | 0                |
+| 83    | BOUNDS         | 0                | 5                | 1                |
+| 84    | =              | 10               | -                | idx              |
+| 85    | BOUNDS         | 0                | 5                | idx              |
+| 86    | =              | tab[idx]         | -                | b                |
+| 87    | /              | a                | 0                | t87              |
+| 88    | DIVCHECK       | -                | -                | 0                |
+| 89    | /              | x                | 0.000000         | t89              |
+| 90    | DIVCHECK       | -                | -                | 0.000000         |
+| 91    | =              | t89              | -                | z                |
+| 92    | +              | "abc"            | 1                | t92              |
+| 93    | =              | t92              | -                | a                |
+| 94    | -              | 5                | "xyz"            | t94              |
+| 95    | =              | t94              | -                | a                |
+| 96    | >              | a                | x                | cond             |
+| 97    | BG             | cond             | -                | 99               |
+| 98    | =              | 1                | -                | b                |
+| 99    | >              | "abc"            | b                | cond             |
+| 100   | BG             | cond             | -                | 102              |
+| 101   | =              | 1                | -                | c                |
+| 102   | ==             | "bonjour"        | a                | cond             |
+| 103   | BE             | cond             | -                | 105              |
+| 104   | =              | 5                | -                | c                |
+| 105   | BNZ            | cond             | -                | 107              |
+| 106   | =              | 7                | -                | c                |
+| 107   | =              | 0                | -                | ghost            |
+| 108   | <=             | ghost            | 5                | cond             |
+| 109   | BLE            | cond             | -                | 114              |
+| 110   | +              | c                | 1                | t110             |
+| 111   | =              | t110             | -                | c                |
+| 112   | AINC           | ghost            | -                | -                |
+| 113   | BR             | -                | -                | 108              |
+| 114   | =              | 0                | -                | x                |
+| 115   | <=             | x                | 4                | cond             |
+| 116   | BLE            | cond             | -                | 121              |
+| 117   | +              | c                | 1                | t117             |
+| 118   | =              | t117             | -                | c                |
+| 119   | AINC           | x                | -                | -                |
+| 120   | BR             | -                | -                | 115              |
+| 121   | =              | 0                | -                | lim              |
+| 122   | <=             | lim              | 3                | cond             |
+| 123   | BLE            | cond             | -                | 128              |
+| 124   | +              | c                | 1                | t124             |
+| 125   | =              | t124             | -                | c                |
+| 126   | AINC           | lim              | -                | -                |
+| 127   | BR             | -                | -                | 122              |
+| 128   | =              | 10               | -                | i                |
+| 129   | <=             | i                | 2                | cond             |
+| 130   | BLE            | cond             | -                | 135              |
+| 131   | +              | c                | 1                | t131             |
+| 132   | =              | t131             | -                | c                |
+| 133   | AINC           | i                | -                | -                |
+| 134   | BR             | -                | -                | 129              |
+| 135   | =              | 3                | -                | i                |
+| 136   | <=             | i                | 3                | cond             |
+| 137   | BLE            | cond             | -                | 142              |
+| 138   | +              | c                | 1                | t138             |
+| 139   | =              | t138             | -                | c                |
+| 140   | AINC           | i                | -                | -                |
+| 141   | BR             | -                | -                | 136              |
+| 142   | =              | 1.500000         | -                | i                |
+| 143   | <=             | i                | 4                | cond             |
+| 144   | BLE            | cond             | -                | 149              |
+| 145   | +              | c                | 1                | t145             |
+| 146   | =              | t145             | -                | c                |
+| 147   | AINC           | i                | -                | -                |
+| 148   | BR             | -                | -                | 143              |
+| 149   | =              | 0                | -                | i                |
+| 150   | <=             | i                | 3.900000         | cond             |
+| 151   | BLE            | cond             | -                | 156              |
+| 152   | +              | c                | 1                | t152             |
+| 153   | =              | t152             | -                | c                |
+| 154   | AINC           | i                | -                | -                |
+| 155   | BR             | -                | -                | 150              |
+| 156   | OUTPUT         | "val = ",inconnu | -                | -                |
+| 157   | OUTPUT         | "tab = ",tab     | -                | -                |
+============================================================================================================
+
+================================================================================================================================================================
+                                             CODE OBJET / PSEUDO-ASSEMBLEUR 8086
+================================================================================================================================================================
+| ID   | INSTRUCTION (machine abstraite)                    | Pseudo-8086 equivalent                                                                     |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| 0    | LOAD 0 ; STORE t1                                  | MOV AX, 0 ; MOV t1, AX                                                                     |
+| 1    | LOAD 0 ; STORE t2                                  | MOV AX, 0 ; MOV t2, AX                                                                     |
+| 2    | LOAD 3.141590 ; STORE pi                           | MOV AX, 3.141590 ; MOV pi, AX                                                              |
+| 3    | LOAD 4 ; STORE lim                                 | MOV AX, 4 ; MOV lim, AX                                                                    |
+| 4    | LOAD 0 ; STORE zero                                | MOV AX, 0 ; MOV zero, AX                                                                   |
+| 5    | LOAD 9 ; STORE lim                                 | MOV AX, 9 ; MOV lim, AX                                                                    |
+| 6    | LOAD 5 ; STORE a                                   | MOV AX, 5 ; MOV a, AX                                                                      |
+| 7    | LOAD 2 ; STORE b                                   | MOV AX, 2 ; MOV b, AX                                                                      |
+| 8    | LOAD a ; ADD b ; STORE t8                          | MOV AX, a ; ADD AX, b ; MOV t8, AX                                                         |
+| 9    | LOAD t8 ; STORE c                                  | MOV AX, t8 ; MOV c, AX                                                                     |
+| 10   | LOAD c ; SUB 1 ; STORE t10                         | MOV AX, c ; SUB AX, 1 ; MOV t10, AX                                                        |
+| 11   | LOAD t10 ; STORE d                                 | MOV AX, t10 ; MOV d, AX                                                                    |
+| 12   | LOAD d ; MUL 2 ; STORE t12                         | MOV AX, d ; IMUL 2 ; MOV t12, AX                                                           |
+| 13   | LOAD t12 ; STORE e                                 | MOV AX, t12 ; MOV e, AX                                                                    |
+| 14   | LOAD 5.500000 ; STORE x                            | MOV AX, 5.500000 ; MOV x, AX                                                               |
+| 15   | LOAD 2.500000 ; STORE y                            | MOV AX, 2.500000 ; MOV y, AX                                                               |
+| 16   | LOAD x ; ADD y ; STORE t16                         | MOV AX, x ; ADD AX, y ; MOV t16, AX                                                        |
+| 17   | LOAD t16 ; STORE z                                 | MOV AX, t16 ; MOV z, AX                                                                    |
+| 18   | LOAD x ; ADD y ; STORE t18                         | MOV AX, x ; ADD AX, y ; MOV t18, AX                                                        |
+| 19   | LOAD t18 ; DIV 2.000000 ; STORE t19                | MOV AX, t18 ; CWD ; MOV BX, 2.000000 ; IDIV BX ; MOV t19, AX                               |
+| 20   | DIVCHECK - - 2.000000                              | traduction non detaillee                                                                   |
+| 21   | LOAD t19 ; STORE moyenne                           | MOV AX, t19 ; MOV moyenne, AX                                                              |
+| 22   | CHECK 0 IN [0,5[                                   | CMP 0, 0 ; JL ERREUR_BOUNDS ; CMP 0, 5 ; JGE ERREUR_BOUNDS                                 |
+| 23   | LOAD a ; STORE tab[0]                              | MOV SI, 0 ; SHL SI, 1 ; MOV AX, a ; MOV [tab+SI], AX                                       |
+| 24   | CHECK 1 IN [0,5[                                   | CMP 1, 0 ; JL ERREUR_BOUNDS ; CMP 1, 5 ; JGE ERREUR_BOUNDS                                 |
+| 25   | LOAD b ; STORE tab[1]                              | MOV SI, 1 ; SHL SI, 1 ; MOV AX, b ; MOV [tab+SI], AX                                       |
+| 26   | CHECK 2 IN [0,5[                                   | CMP 2, 0 ; JL ERREUR_BOUNDS ; CMP 2, 5 ; JGE ERREUR_BOUNDS                                 |
+| 27   | LOAD c ; STORE tab[2]                              | MOV SI, 2 ; SHL SI, 1 ; MOV AX, c ; MOV [tab+SI], AX                                       |
+| 28   | CHECK 3 IN [0,5[                                   | CMP 3, 0 ; JL ERREUR_BOUNDS ; CMP 3, 5 ; JGE ERREUR_BOUNDS                                 |
+| 29   | LOAD d ; STORE tab[3]                              | MOV SI, 3 ; SHL SI, 1 ; MOV AX, d ; MOV [tab+SI], AX                                       |
+| 30   | CHECK 4 IN [0,5[                                   | CMP 4, 0 ; JL ERREUR_BOUNDS ; CMP 4, 5 ; JGE ERREUR_BOUNDS                                 |
+| 31   | LOAD e ; STORE tab[4]                              | MOV SI, 4 ; SHL SI, 1 ; MOV AX, e ; MOV [tab+SI], AX                                       |
+| 32   | CHECK 1 IN [0,5[                                   | CMP 1, 0 ; JL ERREUR_BOUNDS ; CMP 1, 5 ; JGE ERREUR_BOUNDS                                 |
+| 33   | LOAD tab[1] ; STORE a                              | MOV AX, tab[1] ; MOV a, AX                                                                 |
+| 34   | CHECK 2 IN [0,5[                                   | CMP 2, 0 ; JL ERREUR_BOUNDS ; CMP 2, 5 ; JGE ERREUR_BOUNDS                                 |
+| 35   | LOAD tab[2] ; STORE b                              | MOV AX, tab[2] ; MOV b, AX                                                                 |
+| 36   | LOAD 3 ; STORE idx                                 | MOV AX, 3 ; MOV idx, AX                                                                    |
+| 37   | CHECK idx IN [0,5[                                 | CMP idx, 0 ; JL ERREUR_BOUNDS ; CMP idx, 5 ; JGE ERREUR_BOUNDS                             |
+| 38   | LOAD tab[idx] ; STORE c                            | MOV AX, tab[idx] ; MOV c, AX                                                               |
+| 39   | > a b cond                                         | traduction branchement / comparaison                                                       |
+| 40   | BG cond - 43                                       | traduction branchement / comparaison                                                       |
+| 41   | LOAD a ; SUB b ; STORE t41                         | MOV AX, a ; SUB AX, b ; MOV t41, AX                                                        |
+| 42   | LOAD t41 ; STORE c                                 | MOV AX, t41 ; MOV c, AX                                                                    |
+| 43   | < a b cond                                         | traduction branchement / comparaison                                                       |
+| 44   | BL cond - 48                                       | traduction branchement / comparaison                                                       |
+| 45   | LOAD b ; SUB a ; STORE t45                         | MOV AX, b ; SUB AX, a ; MOV t45, AX                                                        |
+| 46   | LOAD t45 ; STORE c                                 | MOV AX, t45 ; MOV c, AX                                                                    |
+| 47   | BR - - 50                                          | traduction branchement / comparaison                                                       |
+| 48   | LOAD a ; ADD b ; STORE t48                         | MOV AX, a ; ADD AX, b ; MOV t48, AX                                                        |
+| 49   | LOAD t48 ; STORE c                                 | MOV AX, t48 ; MOV c, AX                                                                    |
+| 50   | LOAD 0 ; STORE i                                   | MOV AX, 0 ; MOV i, AX                                                                      |
+| 51   | < i 5 cond                                         | traduction branchement / comparaison                                                       |
+| 52   | BL cond - 58                                       | traduction branchement / comparaison                                                       |
+| 53   | CHECK i IN [0,5[                                   | CMP i, 0 ; JL ERREUR_BOUNDS ; CMP i, 5 ; JGE ERREUR_BOUNDS                                 |
+| 54   | LOAD i ; STORE tab[i]                              | MOV SI, i ; SHL SI, 1 ; MOV AX, i ; MOV [tab+SI], AX                                       |
+| 55   | LOAD i ; ADD 1 ; STORE t55                         | MOV AX, i ; ADD AX, 1 ; MOV t55, AX                                                        |
+| 56   | LOAD t55 ; STORE i                                 | MOV AX, t55 ; MOV i, AX                                                                    |
+| 57   | BR - - 51                                          | traduction branchement / comparaison                                                       |
+| 58   | LOAD 0 ; STORE i                                   | MOV AX, 0 ; MOV i, AX                                                                      |
+| 59   | <= i 4 cond                                        | traduction branchement / comparaison                                                       |
+| 60   | BLE cond - 66                                      | traduction branchement / comparaison                                                       |
+| 61   | CHECK i IN [0,5[                                   | CMP i, 0 ; JL ERREUR_BOUNDS ; CMP i, 5 ; JGE ERREUR_BOUNDS                                 |
+| 62   | LOAD b ; ADD tab[i] ; STORE t62                    | MOV AX, b ; ADD AX, tab[i] ; MOV t62, AX                                                   |
+| 63   | LOAD t62 ; STORE b                                 | MOV AX, t62 ; MOV b, AX                                                                    |
+| 64   | INC i                                              | INC i                                                                                      |
+| 65   | BR - - 59                                          | traduction branchement / comparaison                                                       |
+| 66   | READ a                                             | INPUT vers a                                                                               |
+| 67   | READ b                                             | INPUT vers b                                                                               |
+| 68   | WRITE "Valeur de a = ",a                           | OUTPUT "Valeur de a = ",a                                                                  |
+| 69   | WRITE "Valeur de b = ",b                           | OUTPUT "Valeur de b = ",b                                                                  |
+| 70   | WRITE "Valeur de c = ",c                           | OUTPUT "Valeur de c = ",c                                                                  |
+| 71   | WRITE "Valeur de moyenne = ",moyenne               | OUTPUT "Valeur de moyenne = ",moyenne                                                      |
+| 72   | LOAD zzz ; ADD 1 ; STORE t72                       | MOV AX, zzz ; ADD AX, 1 ; MOV t72, AX                                                      |
+| 73   | LOAD t72 ; STORE c                                 | MOV AX, t72 ; MOV c, AX                                                                    |
+| 74   | LOAD 0 ; SUB 1 ; STORE t74                         | MOV AX, 0 ; SUB AX, 1 ; MOV t74, AX                                                        |
+| 75   | CHECK t74 IN [0,5[                                 | CMP t74, 0 ; JL ERREUR_BOUNDS ; CMP t74, 5 ; JGE ERREUR_BOUNDS                             |
+| 76   | LOAD 5 ; STORE tab[t74]                            | MOV SI, t74 ; SHL SI, 1 ; MOV AX, 5 ; MOV [tab+SI], AX                                     |
+| 77   | LOAD 0 ; SUB 2 ; STORE t77                         | MOV AX, 0 ; SUB AX, 2 ; MOV t77, AX                                                        |
+| 78   | CHECK t77 IN [0,5[                                 | CMP t77, 0 ; JL ERREUR_BOUNDS ; CMP t77, 5 ; JGE ERREUR_BOUNDS                             |
+| 79   | LOAD tab[t77] ; STORE a                            | MOV AX, tab[t77] ; MOV a, AX                                                               |
+| 80   | CHECK 8 IN [0,5[                                   | CMP 8, 0 ; JL ERREUR_BOUNDS ; CMP 8, 5 ; JGE ERREUR_BOUNDS                                 |
+| 81   | LOAD tab[8] ; STORE a                              | MOV AX, tab[8] ; MOV a, AX                                                                 |
+| 82   | CHECK 0 IN [0,5[                                   | CMP 0, 0 ; JL ERREUR_BOUNDS ; CMP 0, 5 ; JGE ERREUR_BOUNDS                                 |
+| 83   | CHECK 1 IN [0,5[                                   | CMP 1, 0 ; JL ERREUR_BOUNDS ; CMP 1, 5 ; JGE ERREUR_BOUNDS                                 |
+| 84   | LOAD 10 ; STORE idx                                | MOV AX, 10 ; MOV idx, AX                                                                   |
+| 85   | CHECK idx IN [0,5[                                 | CMP idx, 0 ; JL ERREUR_BOUNDS ; CMP idx, 5 ; JGE ERREUR_BOUNDS                             |
+| 86   | LOAD tab[idx] ; STORE b                            | MOV AX, tab[idx] ; MOV b, AX                                                               |
+| 87   | LOAD a ; DIV 0 ; STORE t87                         | MOV AX, a ; CWD ; MOV BX, 0 ; IDIV BX ; MOV t87, AX                                        |
+| 88   | DIVCHECK - - 0                                     | traduction non detaillee                                                                   |
+| 89   | LOAD x ; DIV 0.000000 ; STORE t89                  | MOV AX, x ; CWD ; MOV BX, 0.000000 ; IDIV BX ; MOV t89, AX                                 |
+| 90   | DIVCHECK - - 0.000000                              | traduction non detaillee                                                                   |
+| 91   | LOAD t89 ; STORE z                                 | MOV AX, t89 ; MOV z, AX                                                                    |
+| 92   | LOAD "abc" ; ADD 1 ; STORE t92                     | MOV AX, "abc" ; ADD AX, 1 ; MOV t92, AX                                                    |
+| 93   | LOAD t92 ; STORE a                                 | MOV AX, t92 ; MOV a, AX                                                                    |
+| 94   | LOAD 5 ; SUB "xyz" ; STORE t94                     | MOV AX, 5 ; SUB AX, "xyz" ; MOV t94, AX                                                    |
+| 95   | LOAD t94 ; STORE a                                 | MOV AX, t94 ; MOV a, AX                                                                    |
+| 96   | > a x cond                                         | traduction branchement / comparaison                                                       |
+| 97   | BG cond - 99                                       | traduction branchement / comparaison                                                       |
+| 98   | LOAD 1 ; STORE b                                   | MOV AX, 1 ; MOV b, AX                                                                      |
+| 99   | > "abc" b cond                                     | traduction branchement / comparaison                                                       |
+| 100  | BG cond - 102                                      | traduction branchement / comparaison                                                       |
+| 101  | LOAD 1 ; STORE c                                   | MOV AX, 1 ; MOV c, AX                                                                      |
+| 102  | == "bonjour" a cond                                | traduction branchement / comparaison                                                       |
+| 103  | BE cond - 105                                      | traduction branchement / comparaison                                                       |
+| 104  | LOAD 5 ; STORE c                                   | MOV AX, 5 ; MOV c, AX                                                                      |
+| 105  | BNZ cond - 107                                     | traduction branchement / comparaison                                                       |
+| 106  | LOAD 7 ; STORE c                                   | MOV AX, 7 ; MOV c, AX                                                                      |
+| 107  | LOAD 0 ; STORE ghost                               | MOV AX, 0 ; MOV ghost, AX                                                                  |
+| 108  | <= ghost 5 cond                                    | traduction branchement / comparaison                                                       |
+| 109  | BLE cond - 114                                     | traduction branchement / comparaison                                                       |
+| 110  | LOAD c ; ADD 1 ; STORE t110                        | MOV AX, c ; ADD AX, 1 ; MOV t110, AX                                                       |
+| 111  | LOAD t110 ; STORE c                                | MOV AX, t110 ; MOV c, AX                                                                   |
+| 112  | INC ghost                                          | INC ghost                                                                                  |
+| 113  | BR - - 108                                         | traduction branchement / comparaison                                                       |
+| 114  | LOAD 0 ; STORE x                                   | MOV AX, 0 ; MOV x, AX                                                                      |
+| 115  | <= x 4 cond                                        | traduction branchement / comparaison                                                       |
+| 116  | BLE cond - 121                                     | traduction branchement / comparaison                                                       |
+| 117  | LOAD c ; ADD 1 ; STORE t117                        | MOV AX, c ; ADD AX, 1 ; MOV t117, AX                                                       |
+| 118  | LOAD t117 ; STORE c                                | MOV AX, t117 ; MOV c, AX                                                                   |
+| 119  | INC x                                              | INC x                                                                                      |
+| 120  | BR - - 115                                         | traduction branchement / comparaison                                                       |
+| 121  | LOAD 0 ; STORE lim                                 | MOV AX, 0 ; MOV lim, AX                                                                    |
+| 122  | <= lim 3 cond                                      | traduction branchement / comparaison                                                       |
+| 123  | BLE cond - 128                                     | traduction branchement / comparaison                                                       |
+| 124  | LOAD c ; ADD 1 ; STORE t124                        | MOV AX, c ; ADD AX, 1 ; MOV t124, AX                                                       |
+| 125  | LOAD t124 ; STORE c                                | MOV AX, t124 ; MOV c, AX                                                                   |
+| 126  | INC lim                                            | INC lim                                                                                    |
+| 127  | BR - - 122                                         | traduction branchement / comparaison                                                       |
+| 128  | LOAD 10 ; STORE i                                  | MOV AX, 10 ; MOV i, AX                                                                     |
+| 129  | <= i 2 cond                                        | traduction branchement / comparaison                                                       |
+| 130  | BLE cond - 135                                     | traduction branchement / comparaison                                                       |
+| 131  | LOAD c ; ADD 1 ; STORE t131                        | MOV AX, c ; ADD AX, 1 ; MOV t131, AX                                                       |
+| 132  | LOAD t131 ; STORE c                                | MOV AX, t131 ; MOV c, AX                                                                   |
+| 133  | INC i                                              | INC i                                                                                      |
+| 134  | BR - - 129                                         | traduction branchement / comparaison                                                       |
+| 135  | LOAD 3 ; STORE i                                   | MOV AX, 3 ; MOV i, AX                                                                      |
+| 136  | <= i 3 cond                                        | traduction branchement / comparaison                                                       |
+| 137  | BLE cond - 142                                     | traduction branchement / comparaison                                                       |
+| 138  | LOAD c ; ADD 1 ; STORE t138                        | MOV AX, c ; ADD AX, 1 ; MOV t138, AX                                                       |
+| 139  | LOAD t138 ; STORE c                                | MOV AX, t138 ; MOV c, AX                                                                   |
+| 140  | INC i                                              | INC i                                                                                      |
+| 141  | BR - - 136                                         | traduction branchement / comparaison                                                       |
+| 142  | LOAD 1.500000 ; STORE i                            | MOV AX, 1.500000 ; MOV i, AX                                                               |
+| 143  | <= i 4 cond                                        | traduction branchement / comparaison                                                       |
+| 144  | BLE cond - 149                                     | traduction branchement / comparaison                                                       |
+| 145  | LOAD c ; ADD 1 ; STORE t145                        | MOV AX, c ; ADD AX, 1 ; MOV t145, AX                                                       |
+| 146  | LOAD t145 ; STORE c                                | MOV AX, t145 ; MOV c, AX                                                                   |
+| 147  | INC i                                              | INC i                                                                                      |
+| 148  | BR - - 143                                         | traduction branchement / comparaison                                                       |
+| 149  | LOAD 0 ; STORE i                                   | MOV AX, 0 ; MOV i, AX                                                                      |
+| 150  | <= i 3.900000 cond                                 | traduction branchement / comparaison                                                       |
+| 151  | BLE cond - 156                                     | traduction branchement / comparaison                                                       |
+| 152  | LOAD c ; ADD 1 ; STORE t152                        | MOV AX, c ; ADD AX, 1 ; MOV t152, AX                                                       |
+| 153  | LOAD t152 ; STORE c                                | MOV AX, t152 ; MOV c, AX                                                                   |
+| 154  | INC i                                              | INC i                                                                                      |
+| 155  | BR - - 150                                         | traduction branchement / comparaison                                                       |
+| 156  | WRITE "val = ",inconnu                             | OUTPUT "val = ",inconnu                                                                    |
+| 157  | WRITE "tab = ",tab                                 | OUTPUT "tab = ",tab                                                                        |
+================================================================================================================================================================
+
+Compilation Programme M1_iv_2526 terminee.
